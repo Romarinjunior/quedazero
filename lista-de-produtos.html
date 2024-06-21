@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Produtos QuedaZero</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    @keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    border: none;
+  }
+}
+
+.fade-out {
+  animation: fadeOut 0.45s ease forwards;
+}
+    body {
+      background-image: linear-gradient(to right, rgb(22, 22, 255), #3b3bbd, rgb(72, 51, 165));
+    }
+    h1 {
+      text-align: center;
+      color: white;
+    }
+    .container {
+      margin-top: 30px;
+    }
+    .table th, .table td {
+      vertical-align: middle !important;
+    }
+    .btn1{
+      float: right;
+    }
+    .btn {
+      border-radius: 20px;
+      
+    }
+    .btn-info:hover{
+      background-color: rgb(14, 158, 241);
+      border-color: rgb(14, 158, 241);
+    }
+    .btn-primary {
+      background-color: #6c757d;
+      border-color: #6c757d;
+    }
+    .btn-primary:hover {
+      background-color: #5a6268;
+      border-color: #545b62;
+    }
+    .btn-danger {
+      background-color: #dc3545;
+      border-color: #dc3545;
+    }
+    .btn-danger:hover {
+      background-color: #c82333;
+      border-color: #bd2130;
+    }
+ 
+  </style>
+</head>
+<body>
+
+<div id="container" class="container">
+  <h1>Produtos</h1>
+  <table class="table table-striped">
+    <thead class=" a">
+      <tr>
+        <th>Produtos</th>
+        <th>Nome</th>
+        <th>Preços</th>
+        <th>Status</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody id="tbody">
+      <button onclick="window.location.href = 'index.html';" class="btn btn1 btn-info espc">Voltar</button>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog modal-dialog-scrollable">
+    <div class="modal-content">
+      
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Modifique</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <!-- Início do body do modal -->
+        <div class="card mt-2">
+          <div class="card-header bg-secondary text-white">
+            <label for="Nome" class="form-label">Nome:</label>
+          </div>
+          <div class="card-body bg-light">
+            <input type="nome" class="form-control" id="Nome" placeholder="Digite nome" name="nome">
+          </div> 
+        </div>
+        <div class="card mt-2">
+          <div class="card-header bg-secondary text-white">
+            <label for="Preços" class="form-label">Preços:</label>
+          </div>
+          <div class="card-body bg-light">
+            <input type="nome" class="form-control" id="Preços" placeholder="Digite Preços" name="Preços">
+          </div> 
+        </div>
+        <div class="card mt-2">
+          <div class="card-header bg-secondary text-white">
+            <label for="nome" class="form-label">Status:</label>
+          </div>
+          <div class="card-body bg-light">
+            <input type="nome" class="form-control" id="Status" placeholder="Digite Status" name="Status">
+          </div> 
+        </div>
+        
+
+        <!-- fim do corpo do modal -->
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+  function criarTabela() {
+    
+    const produtos = [
+      { avatar: "antiqueda.jpeg", nome: "Medicinol",preços: " R$249,90", status: "Processando" },
+      { avatar: "antiqueda2.jpeg", nome: "Urativa", preços: "  R$624,90", status: "Processando" },
+      { avatar: "bomba.jpeg", nome: "Bomba", preços: " R$350,00",status: "Processando" },
+      { avatar: "produto2.png", nome: "Loreal", preços: " R$ 299,90",  status: "Processando" },
+      { avatar: "produto3.png", nome: "Rootbi HO", preços: " R$ 534,90",status: "Processando" },
+      { avatar: "aa.png", nome: "Manual", preços: " R$ 99,99", status: "Processando" },
+      { avatar: "jaborandi.png", nome: "Jaborandi", preços: " R$ 150,95", status: "Processando" },
+      { avatar: "cavalo-shampoo.png", nome: "CavaloForte", preços: "R$ 53,49", status: "Processando" },
+      { avatar: "th.png", nome: "johnnie", preços: "R$ 149,99", status: "Processando" },
+  ]
+
+    const tbody = document.getElementById('tbody');
+    produtos.forEach(function (objeto) {
+      let tr = document.createElement('tr');
+
+      let imagem = document.createElement('img');
+      imagem.src = `imagens/${objeto.avatar}`;
+      imagem.height = 90;
+      imagem.alt = "avatar";
+      imagem.style.borderRadius = "50%"; 
+
+      let td0 = document.createElement('td');
+      td0.append(imagem);
+      tr.append(td0);
+
+      let td1 = document.createElement('td');
+      td1.innerText = objeto.nome;
+      tr.append(td1);
+
+      let td2 = document.createElement('td');
+      td2.innerText = objeto.preços;
+      tr.append(td2);
+      
+
+
+      let td4 = document.createElement('td');
+      td4.innerText = objeto.status;
+      tr.append(td4);
+
+      let td5 = document.createElement('td');
+      let btn = document.createElement('button');
+      btn.innerText = "Editar";
+      btn.className = "btn btn-primary dropdown-toggle";
+      btn.setAttribute("data-bs-toggle", "dropdown");
+      td5.append(btn);
+
+      let dropdownMenu = document.createElement('ul');
+      dropdownMenu.className = "dropdown-menu";
+      dropdownMenu.setAttribute("aria-labelledby", "dropdownMenuButton");
+
+      let statusOptions = ["Em estoque", "Fora de estoque", "Processando"];
+
+      statusOptions.forEach(function(statusOption) {
+        let dropdownItem = document.createElement('li');
+        let dropdownLink = document.createElement('a');
+        dropdownLink.className = "dropdown-item";
+        dropdownLink.innerText = statusOption;
+        dropdownLink.addEventListener('click', function() {
+          objeto.status = statusOption;
+          td4.innerText = statusOption;
+        });
+        dropdownItem.appendChild(dropdownLink);
+        dropdownMenu.appendChild(dropdownItem);
+      });
+
+      td5.appendChild(dropdownMenu);
+        
+      let btn1 = document.createElement('button');
+      btn1.innerText = "Remover";
+      btn1.className = "btn btn-danger ms-1";
+      btn1.addEventListener('click', function(){
+        var resultado = confirm("Você deseja remover o produto?");
+      if (resultado == true){
+        alert("O produto será removido da lista!");
+        tr.classList.add('fade-out');
+  setTimeout(function() {
+    tr.remove();
+  }, 450);
+} else{
+  return alert("Você desistiu de remover o produto!")
+}
+  
+      });
+      let btn_editar = document.createElement('button');
+      btn_editar.className = "btn btn-warning editar"
+      btn_editar.innerText = "Editar"
+
+      td5.append(btn1);
+      td5.append(btn_editar)
+      tr.append(td5);
+
+
+      tbody.append(tr);
+    });
+  }
+
+  window.onload = criarTabela;
+
+  $(document).ready(function(){
+
+    $('.editar').on('click', function(){
+        let modal = document.getElementById('myModal')
+        var myModal = new bootstrap.Modal(modal)
+        myModal.show()
+
+      let tr = $(this).closest('tr')
+      $('#Nome').val($(tr).find("td").eq(1).html())
+      let tr2 = $(this).closest('tr')
+      $('#Preços').val($(tr2).find("td").eq(2).html())
+      let tr3 = $(this).closest('tr')
+      $('#Status').val($(tr3).find("td").eq(3).html())
+    
+
+    })
+
+  });
+  
+</script>
+
+</body>
+</html>

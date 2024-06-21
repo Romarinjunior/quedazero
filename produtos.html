@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos</title>
+    <style>
+        .espc{
+            float: right;
+            margin-right: 309px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+        .header {
+            background-color: #1470da;
+            height: 30px;
+            width: 100%;
+            text-align: center;
+            line-height: 30px; 
+            color: white;
+            font-weight: bold;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            display: flex; 
+            justify-content: center; 
+            flex-wrap: wrap; 
+        }
+
+        .product {
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px;
+            overflow: hidden;
+            width: calc(33.33% - 40px);
+            max-width: 300px; 
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .product h2 {
+            margin-top: 0;
+            font-size: 24px;
+        }
+
+        .product p {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .product button {
+            background-color: #1470da;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 16px;
+        }
+
+        .product button:hover {
+            background-color: #0b5394;
+        }
+        .rodape{
+            bottom: 0px;
+            padding:10px;
+            width: 100%;
+            background-color: #1470da;
+            position: static;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">Quedazero</div>
+
+<div class="container">
+    <div class="product">
+        <img src="imagens/aa.png" height="200" alt="Produto 1">
+        <p>Minoxidil e Finasterina Oral| Tratamento para Queda de Cabelo MANUAL</p>
+        <h2>R$ 99,99</h2>
+       
+        <a href="compra.html" class="button btn btn-primary mt-3">Comprar</a>
+    </div>
+
+    <div class="product">
+        <img src="imagens/produto2.png" height="200" alt="Produto 2">
+        <p>Kit Inforcer Shampoo + Máscara de Tratamento Serie Expert, L´Oreal Professionnel Paris</p>
+        <h2>R$ 299,90</h2>
+        
+        <a href="compra.html" class="button btn btn-primary mt-3">Comprar</a>
+    </div>
+
+    <div class="product">
+        <img src="imagens/produto3.png" height="200" alt="Produto 3">
+        <p>	Kit Completo Anti Quedas de Cabelo 500ml Jaborandi Haskell
+            RootBi Ho 3% - Loção Capilar 100 ml</p>
+        <h2>R$ 534,90</h2>
+        
+        <a href="compra.html" class="button btn btn-primary mt-3">Comprar</a>
+    </div>
+    <div class="product">
+        <img src="imagens/jaborandi.png" height="200" alt="Produto 4">
+        <p>Kit Completo Anti Quedas de Cabelo 500ml Jaborandi Haskell</p>
+        <h2>R$ 150,95</h2>
+        
+        <a href="compra.html" class="button btn btn-primary mt-3">Comprar</a>
+    </div>
+   <div class="product">
+        <img src="imagens/cavalo-shampoo.png" height="200" alt="Produto 1">
+        <p>Shampoo Para Queda De Cabelo CavaloForte Haskell 500ml</p>
+        <h2>R$ 53,49</h2>
+       
+        <a href="compra.html" class="button btn btn-primary mt-3">Comprar</a>
+    </div>
+    <div class="product">
+        <img src="imagens/th.png" height="200" alt="Produto 1">
+        <p>Shampoo Oil Control Anti-queda Profissional Barbearia Cabelo</p>
+        <h2>R$ 149,99</h2>
+       
+        <a href="compra.html" class="button btn btn-primary mt-3">Comprar</a>
+    </div>
+</div>
+<a href="video.html" class=" btn btn-info espc">🚫Não clique🚫</a>
+<button onclick="window.location.href = 'index.html';" class="btn btn-info espc">Voltar</button>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="rodape" >
+    CNPJ n.º 12.666.322/9123-55  / Instituto Federal Fluminense, nº 5.154, Maricá, Maricá/RJ - CEP 78214-412 - Empresa do grupo Quedazero.<br>
+    Copyright © 1999-2024  
+</div>
+</body>
+</html>
